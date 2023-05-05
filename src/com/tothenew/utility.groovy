@@ -71,7 +71,7 @@ def Image_cleanup(String docker_repo,String tag){
 }
 
 //update helm...............................................................................................................................................
- def Helm_update(String devops_git_url,String service_name,Sting docker_repo,String ){
+ def Helm_update(String devops_git_url,String service_name,Sting docker_repo ){
     env.new_docker_image=${docker_repo}+":"+${tag}
     service = service_name.split('-').[0]
       
