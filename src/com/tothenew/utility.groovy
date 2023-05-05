@@ -71,15 +71,15 @@ def Image_cleanup(String docker_repo,String tag){
 }
 
 //update helm...............................................................................................................................................
- def Helm_update(String devops_git_url,String service_name){
+ def Helm_update(String devops_git_url,String service_name,Sting docker_repo,String ){
     env.new_docker_image=${docker_repo}+":"+${tag}
-     def service = split
+    service = service_name.split('-').[0]
       
        sh """
 
           rm -rf *
           
-          git clone -b "$devops_branch_name" "$devops_git_url"
+          git clone -b "${devops_branch_name}" "${devops_git_url}"
           cd devops
           sed -E -i 's/(${service_name}:).*/${service_name}:$tag/' '${service}/values.yaml'
           git add *
