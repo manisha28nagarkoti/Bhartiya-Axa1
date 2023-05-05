@@ -118,7 +118,8 @@ stage('Image cleanup'){
 //helm update.........................................
    stage('helm update'){
      step{
-       myObject.Helm_update("${devops_git_url}","${service_name}")
+         myObject.Helm_update("${devops_git_url}","${service_name}","${docker_repo}")
+          
        }
       
       }
