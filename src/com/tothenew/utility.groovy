@@ -14,17 +14,17 @@ def notifier(){
 
 
 //git clone............................................................................................................
-def Git_clone(String git_url,String credential_git){ 
-withCredentials([sshUserPrivateKey(credentialsId: "${credential_git}", keyFileVariable: 'SSH_KEY')]) {
-                    sh """
-                        eval `ssh-agent`
-                        ssh-add $SSH_KEY
-                        ssh-keyscan github.com >> ~/.ssh/known_hosts
-                        git clone "${git_url}" .
-                    """
-                }
+// def Git_clone(String git_url,String credential_git){ 
+// withCredentials([sshUserPrivateKey(credentialsId: "${credential_git}", keyFileVariable: 'SSH_KEY')]) {
+//                     sh """
+//                         eval `ssh-agent`
+//                         ssh-add $SSH_KEY
+//                         ssh-keyscan github.com >> ~/.ssh/known_hosts
+//                         git clone "${git_url}" .
+//                     """
+//                 }
   
-}
+// }
 
 //Gain access from aws...........................................................................................................................
  def Gaining_access(){
